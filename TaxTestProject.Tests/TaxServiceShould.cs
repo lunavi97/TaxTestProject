@@ -17,5 +17,12 @@ namespace TaxTestProject.Tests
             var taxService = new TaxService();
             Assert.AreEqual(1000, taxService.GetTax(9500));
         }
+
+        [TestMethod]
+        public void Returns2000IfGrossSalaryIs19500()
+        {
+            var taxService = new TaxService();
+            Assert.AreEqual(2000, taxService.GetTax(19500));
+        }
     }
 }

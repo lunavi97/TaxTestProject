@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaxTestProject.Repositories;
 using TaxTestProject.Services;
 
 namespace TaxTestProject
@@ -20,7 +21,7 @@ namespace TaxTestProject
                 return;
             }
 
-            var taxService = new TaxService();
+            var taxService = new TaxService(new RangeRepository());
             Console.WriteLine($"Vas a pagar {taxService.GetTax(gross)}.");
             Console.ReadKey();
         }

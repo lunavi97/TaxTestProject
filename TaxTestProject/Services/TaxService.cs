@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaxTestProject.Contacts;
 
 namespace TaxTestProject.Services
 {
     public class TaxService
     {
+        private readonly IRangeRepository _rangeRepository;
+
+        public TaxService(IRangeRepository rangeRepository)
+        {
+            _rangeRepository = rangeRepository;
+        }
+
         public decimal GetTax(decimal grossSalary)
         {
-            if (grossSalary < 10000)
-            {
-                return 1000;
-            }
-
-            return 2000;
+            var percentage = _rangeRepository.GetRange(grossSalary).Percentage;
+            return grossSalary / 100 * percentage;
         }
     }
 }

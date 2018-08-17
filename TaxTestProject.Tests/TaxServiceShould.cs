@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaxTestProject.Repositories;
 using TaxTestProject.Services;
 
 namespace TaxTestProject.Tests
@@ -12,17 +13,17 @@ namespace TaxTestProject.Tests
     public class TaxServiceShould
     {
         [TestMethod]
-        public void Returns1000IfGrossSalaryIs9500()
+        public void Returns1805IfGrossSalaryIs9500()
         {
-            var taxService = new TaxService();
-            Assert.AreEqual(1000, taxService.GetTax(9500));
+            var taxService = new TaxService(new RangeRepository());
+            Assert.AreEqual(1805, taxService.GetTax(9500));
         }
 
         [TestMethod]
-        public void Returns2000IfGrossSalaryIs19500()
+        public void Returns4680IfGrossSalaryIs19500()
         {
-            var taxService = new TaxService();
-            Assert.AreEqual(2000, taxService.GetTax(19500));
+            var taxService = new TaxService(new RangeRepository());
+            Assert.AreEqual(4680, taxService.GetTax(19500));
         }
     }
 }

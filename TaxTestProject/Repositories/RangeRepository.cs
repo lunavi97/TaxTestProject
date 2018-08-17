@@ -17,14 +17,16 @@ namespace TaxTestProject.Repositories
         public RangeRepository()
         {
             string jsonFile = Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory, "ranges.json");
+                AppDomain.CurrentDomain.BaseDirectory, "Ranges.json");
             _ranges = JsonConvert.DeserializeObject<List<Range>>(
                 File.ReadAllText(jsonFile, Encoding.UTF8));
         }
 
         public Range GetRange(decimal grossSalary)
         {
-            throw new NotImplementedException();
+            return _ranges.Single(r =>
+            grossSalary >= r.InclusiveMinValue &&
+            grossSalary <= (r.InclusiveMaxValue ?? grossSalary));
         }
     }
 }

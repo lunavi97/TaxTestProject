@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contacts\IRangeRepository.cs" />
+    <Compile Include="Contracts\IRangeRepository.cs" />
     <Compile Include="Entities\Range.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

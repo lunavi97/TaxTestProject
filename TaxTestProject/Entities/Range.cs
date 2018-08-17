@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TaxTestProject.Entities
 {
-    class Range
+    public class Range
     {
+        public decimal InclusiveMinValue { get; set; }
+        public decimal? InclusiveMaxValue { get; set; }
+        public int Percentage { get; set; }
     }
 }

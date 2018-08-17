@@ -1,4 +1,4 @@
-﻿{
+﻿[
     {
         "inclusiveMinValue": "0",
         "inclusiveMaxValue": "12449",
@@ -23,4 +23,4 @@
         "inclusiveMinValue": "60000",
         "percentage": "45"
     }
-}
+]
